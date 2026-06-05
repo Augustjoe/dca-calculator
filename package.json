@@ -1,0 +1,31 @@
+{
+  "name": "a-share-dca-calculator",
+  "private": true,
+  "version": "0.1.0",
+  "description": "定投计算器：预置股票、ETF 和指数的单笔买入与定投收益回测工具。",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "update-data": "python scripts/update-data.py"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "antd": "^6.4.3",
+    "dayjs": "^1.11.21",
+    "echarts": "^6.0.0",
+    "lucide-react": "^0.561.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "vite": "^7.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
+  }
+}

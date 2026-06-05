@@ -1,0 +1,321 @@
+:root {
+  color: #1e2420;
+  background: #f5f7f4;
+  font-family: Inter, "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 247, 244, 0.98)),
+    #f5f7f4;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(18px, 2.4vw, 34px);
+  background: transparent;
+}
+
+.topbar {
+  min-height: 56px;
+}
+
+.brand .ant-typography {
+  font-size: 16px;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(135deg, #107a64, #315dd8);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.top-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: #1e2420;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.source-alert {
+  margin-top: 18px;
+  border-radius: 8px;
+}
+
+.workspace {
+  width: 100%;
+  margin-top: 26px;
+}
+
+.workspace > .ant-col {
+  min-width: 0;
+}
+
+.work-card {
+  height: 100%;
+  border-color: rgba(188, 203, 191, 0.78);
+  box-shadow: 0 12px 30px rgba(32, 45, 40, 0.07);
+}
+
+.work-card .ant-card-head {
+  min-height: auto;
+  padding: 16px 18px 10px;
+  border-bottom: 0;
+}
+
+.work-card .ant-card-body {
+  padding: 12px 18px 18px;
+}
+
+.main-card .ant-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ant-typography h3,
+h3.ant-typography {
+  margin: 0;
+  color: #1e2420;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 780;
+}
+
+.ant-typography-secondary {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.input-form .ant-form-item {
+  margin-bottom: 15px;
+}
+
+.input-form .ant-form-item-label {
+  padding-bottom: 7px;
+}
+
+.input-form .ant-form-item-label > label {
+  color: #4d5751;
+  font-size: 12px;
+  font-weight: 680;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.tag-row {
+  margin-top: 8px;
+}
+
+.form-alert {
+  margin-top: 14px;
+}
+
+.metric-card {
+  min-height: 112px;
+  border-color: #dfe6df;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.metric-card .ant-statistic-title {
+  color: #66706a;
+  font-size: 12px;
+}
+
+.metric-card .ant-statistic-content {
+  color: #101713;
+  font-size: 28px;
+  font-weight: 780;
+  line-height: 1.05;
+}
+
+.chart-card {
+  min-height: 504px;
+  border-color: #dfe6df;
+}
+
+.chart-card .ant-card-head {
+  min-height: 44px;
+  border-bottom: 0;
+}
+
+.chart-card .ant-card-head-title {
+  font-size: 18px;
+  font-weight: 780;
+}
+
+.chart-card .ant-card-body {
+  padding: 0 12px 12px;
+}
+
+.chart-surface {
+  width: 100%;
+  height: clamp(360px, 43vh, 560px);
+}
+
+@media (min-width: 1600px) {
+  .metric-card .ant-statistic-content {
+    font-size: 32px;
+  }
+
+  .chart-card {
+    min-height: 620px;
+  }
+}
+
+.hero-metric {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 24px 18px;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(135deg, #0f5547, #315dd8);
+}
+
+.hero-metric .ant-typography {
+  color: #fff;
+  font-size: 13px;
+}
+
+.hero-metric strong {
+  overflow-wrap: anywhere;
+  color: #fff;
+  font-size: 34px;
+  line-height: 1.05;
+}
+
+.summary-list {
+  padding: 2px 14px;
+  border: 1px solid #dfe6df;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.summary-row {
+  min-height: 52px;
+}
+
+.summary-row .ant-typography:last-child {
+  text-align: right;
+}
+
+.summary-divider {
+  margin: 0;
+}
+
+.summary-list .summary-divider:last-child {
+  display: none;
+}
+
+.rules-card {
+  margin-top: 12px;
+  border-color: #dfe6df;
+}
+
+.rules-card .ant-card-head {
+  min-height: 42px;
+}
+
+.rules-card .ant-card-body {
+  padding-top: 0;
+}
+
+@media (max-width: 991px) {
+  .summary-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 14px;
+  }
+
+  .hide-mobile,
+  .top-pill {
+    display: none;
+  }
+
+  .source-alert {
+    margin-top: 12px;
+  }
+
+  .workspace {
+    width: 100%;
+    margin-top: 12px;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .workspace > .ant-col {
+    max-width: 100%;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .work-card .ant-card-head {
+    padding: 16px 14px 8px;
+  }
+
+  .work-card .ant-card-body {
+    padding: 10px 14px 16px;
+  }
+
+  .metric-card {
+    min-height: 90px;
+  }
+
+  .metric-card .ant-statistic-content {
+    font-size: 24px;
+  }
+
+  .chart-card {
+    min-height: 330px;
+  }
+
+  .chart-card .ant-card-body {
+    padding: 0 0 8px;
+  }
+
+  .chart-surface {
+    height: 278px;
+  }
+
+  .hero-metric strong {
+    font-size: 31px;
+  }
+}
+
+@media (max-width: 360px) {
+  .metric-card .ant-statistic-content {
+    font-size: 21px;
+  }
+}
