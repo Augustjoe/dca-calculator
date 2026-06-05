@@ -5,3 +5,6 @@ dist/
 .env.*
 qa-screenshots/
 *.tsbuildinfo
+
+# Local Netlify folder
+.netlify
