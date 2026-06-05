@@ -1,5 +1,5 @@
 {
-  "name": "a-share-dca-calculator",
+  "name": "dca-calculator",
   "private": true,
   "version": "0.1.0",
   "description": "定投计算器：预置股票、ETF 和指数的单笔买入与定投收益回测工具。",
