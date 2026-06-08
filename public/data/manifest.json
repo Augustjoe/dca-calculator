@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-05T23:47:25+08:00",
+  "updatedAt": "2026-06-08T22:43:50+08:00",
   "stocks": [
     {
       "symbol": "000001",
@@ -7,7 +7,7 @@
       "name": "平安银行",
       "assetType": "stock",
       "file": "/data/stocks/000001.SZ.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "000333",
@@ -15,7 +15,7 @@
       "name": "美的集团",
       "assetType": "stock",
       "file": "/data/stocks/000333.SZ.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "000858",
@@ -23,7 +23,7 @@
       "name": "五粮液",
       "assetType": "stock",
       "file": "/data/stocks/000858.SZ.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "002415",
@@ -31,7 +31,7 @@
       "name": "海康威视",
       "assetType": "stock",
       "file": "/data/stocks/002415.SZ.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "300750",
@@ -39,7 +39,7 @@
       "name": "宁德时代",
       "assetType": "stock",
       "file": "/data/stocks/300750.SZ.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "600036",
@@ -47,7 +47,7 @@
       "name": "招商银行",
       "assetType": "stock",
       "file": "/data/stocks/600036.SH.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "600276",
@@ -55,7 +55,7 @@
       "name": "恒瑞医药",
       "assetType": "stock",
       "file": "/data/stocks/600276.SH.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "600519",
@@ -63,7 +63,7 @@
       "name": "贵州茅台",
       "assetType": "stock",
       "file": "/data/stocks/600519.SH.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "601318",
@@ -71,7 +71,7 @@
       "name": "中国平安",
       "assetType": "stock",
       "file": "/data/stocks/601318.SH.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "510300",
@@ -79,7 +79,7 @@
       "name": "沪深300ETF",
       "assetType": "etf",
       "file": "/data/stocks/510300.SH.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "NDX",
@@ -87,7 +87,7 @@
       "name": "纳斯达克100",
       "assetType": "index",
       "file": "/data/stocks/NDX.US.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "IXIC",
@@ -95,7 +95,7 @@
       "name": "纳斯达克综合指数",
       "assetType": "index",
       "file": "/data/stocks/IXIC.US.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "GSPC",
@@ -103,7 +103,7 @@
       "name": "标普500",
       "assetType": "index",
       "file": "/data/stocks/GSPC.US.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "000300",
@@ -111,7 +111,7 @@
       "name": "沪深300",
       "assetType": "index",
       "file": "/data/stocks/000300.CSI.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     },
     {
       "symbol": "000852",
@@ -119,7 +119,7 @@
       "name": "中证1000",
       "assetType": "index",
       "file": "/data/stocks/000852.CSI.json",
-      "latestTradeDate": "2026-06-05"
+      "latestTradeDate": "2026-06-08"
     }
   ]
 }

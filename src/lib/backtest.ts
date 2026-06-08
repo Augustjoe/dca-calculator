@@ -47,11 +47,23 @@ export function calculateSingleBuy(input: SingleBuyInput): BacktestResult {
   const [endTradeDate, endPrice] = prices[viewIndex];
   const totalShares = amount / buyPrice;
   const finalValue = totalShares * endPrice;
-  const chart = prices.slice(buyIndex, viewIndex + 1).map<ChartPoint>(([date, close]) => ({
-    date,
-    assetValue: totalShares * close,
-    invested: amount,
-  }));
+  let peakValue = 0;
+  let maxDrawdown = 0;
+  const chart = prices.slice(buyIndex, viewIndex + 1).map<ChartPoint>(([date, close]) => {
+    const assetValue = totalShares * close;
+    peakValue = Math.max(peakValue, assetValue);
+    const currentDrawdown = peakValue > 0 ? assetValue / peakValue - 1 : 0;
+    maxDrawdown = Math.min(maxDrawdown, currentDrawdown);
+
+    return {
+      date,
+      assetValue,
+      invested: amount,
+      price: close,
+      returnRate: assetValue / amount - 1,
+      maxDrawdown,
+    };
+  });
 
   return {
     mode: "single",
@@ -95,6 +107,8 @@ export function calculateDca(input: DcaInput): BacktestResult {
   const chart: ChartPoint[] = [];
   let totalInvested = 0;
   let totalShares = 0;
+  let peakValue = 0;
+  let maxDrawdown = 0;
 
   for (let index = startIndex; index <= endIndex; index += 1) {
     const [date, close] = prices[index];
@@ -110,10 +124,17 @@ export function calculateDca(input: DcaInput): BacktestResult {
         totalShares,
       });
     }
+    const assetValue = totalShares * close;
+    peakValue = Math.max(peakValue, assetValue);
+    const currentDrawdown = peakValue > 0 ? assetValue / peakValue - 1 : 0;
+    maxDrawdown = Math.min(maxDrawdown, currentDrawdown);
     chart.push({
       date,
-      assetValue: totalShares * close,
+      assetValue,
       invested: totalInvested,
+      price: close,
+      returnRate: totalInvested > 0 ? assetValue / totalInvested - 1 : 0,
+      maxDrawdown,
     });
   }
 

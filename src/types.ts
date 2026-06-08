@@ -35,6 +35,9 @@ export interface ChartPoint {
   date: string;
   assetValue: number;
   invested: number;
+  price: number;
+  returnRate: number;
+  maxDrawdown: number;
 }
 
 export interface TradeRecord {

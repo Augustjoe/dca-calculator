@@ -78,7 +78,22 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [mode, selectedStock]);
+  }, [selectedStock]);
+
+  const handleModeChange = useCallback(
+    (nextMode: InvestmentMode) => {
+      setMode(nextMode);
+      if (!stockData) return;
+
+      try {
+        setError("");
+        setResult(runCalculation(stockData, nextMode, form));
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "计算失败");
+      }
+    },
+    [form, stockData],
+  );
 
   const handleCalculate = useCallback(() => {
     if (!stockData) return;
@@ -119,13 +134,13 @@ export default function App() {
               error={error}
               loading={loading}
               onSelectedKeyChange={setSelectedKey}
-              onModeChange={setMode}
+              onModeChange={handleModeChange}
               onFormChange={setForm}
               onCalculate={handleCalculate}
             />
           </Col>
 
-          <Col xs={24} lg={11} xl={12} xxl={14}>
+          <Col className="main-column" xs={24} lg={11} xl={12} xxl={14}>
             <ResultsPanel mode={mode} result={result} />
           </Col>
 

@@ -11,31 +11,55 @@
 }
 
 body {
+  min-height: 100vh;
   min-width: 320px;
+  width: 100%;
   margin: 0;
+  overflow-x: hidden;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 247, 244, 0.98)),
     #f5f7f4;
 }
 
+html {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 #root {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 720px;
 }
 
 .app-shell {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  min-height: 100vh;
+  max-width: 100vw;
+  min-height: 100%;
+  height: 100%;
   padding: clamp(18px, 2.4vw, 34px);
+  overflow: hidden;
   background: transparent;
 }
 
 .topbar {
+  width: 100%;
+  min-width: 0;
   min-height: 56px;
+  gap: 12px;
+}
+
+.brand {
+  min-width: 0;
 }
 
 .brand .ant-typography {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 16px;
 }
 
@@ -61,24 +85,49 @@ body {
   background: rgba(255, 255, 255, 0.82);
 }
 
+.header-action {
+  flex: 0 0 auto;
+}
+
 .source-alert {
   margin-top: 18px;
   border-radius: 8px;
 }
 
 .workspace {
+  flex: 1;
   width: 100%;
   margin-top: 26px;
+  min-height: 0;
+  align-items: flex-start;
 }
 
 .workspace > .ant-col {
+  display: flex;
+  min-height: 0;
   min-width: 0;
 }
 
 .work-card {
-  height: 100%;
+  width: 100%;
+  max-width: 100%;
   border-color: rgba(188, 203, 191, 0.78);
   box-shadow: 0 12px 30px rgba(32, 45, 40, 0.07);
+}
+
+.main-column,
+.main-card {
+  height: 100%;
+  min-height: 0;
+}
+
+.main-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-card > .ant-card-head {
+  flex: 0 0 auto;
 }
 
 .work-card .ant-card-head {
@@ -88,10 +137,13 @@ body {
 }
 
 .work-card .ant-card-body {
+  min-width: 0;
   padding: 12px 18px 18px;
 }
 
 .main-card .ant-card-body {
+  flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -157,7 +209,10 @@ h3.ant-typography {
 }
 
 .chart-card {
-  min-height: 504px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   border-color: #dfe6df;
 }
 
@@ -172,21 +227,43 @@ h3.ant-typography {
 }
 
 .chart-card .ant-card-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
   padding: 0 12px 12px;
 }
 
 .chart-surface {
+  flex: 1;
   width: 100%;
-  height: clamp(360px, 43vh, 560px);
+  height: auto;
+  min-height: 320px;
+}
+
+.chart-modal .ant-modal-content {
+  height: calc(100vh - 32px);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.chart-modal .ant-modal-header {
+  margin-bottom: 10px;
+}
+
+.chart-modal .ant-modal-body {
+  height: calc(100vh - 132px);
+  min-height: 0;
+}
+
+.fullscreen-chart-surface {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
 }
 
 @media (min-width: 1600px) {
   .metric-card .ant-statistic-content {
     font-size: 32px;
-  }
-
-  .chart-card {
-    min-height: 620px;
   }
 }
 
@@ -249,6 +326,39 @@ h3.ant-typography {
 }
 
 @media (max-width: 991px) {
+  #root {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .app-shell {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .workspace {
+    flex: initial;
+    align-items: initial;
+  }
+
+  .workspace > .ant-col {
+    display: block;
+  }
+
+  .main-column,
+  .main-card {
+    height: auto;
+  }
+
+  .main-card {
+    display: block;
+  }
+
+  .main-card .ant-card-body {
+    height: auto;
+  }
+
   .summary-card {
     min-height: auto;
   }
@@ -256,7 +366,17 @@ h3.ant-typography {
 
 @media (max-width: 760px) {
   .app-shell {
+    min-height: 100vh;
     padding: 14px;
+  }
+
+  .topbar {
+    overflow: hidden;
+  }
+
+  .topbar .ant-space {
+    flex: 0 0 auto;
+    margin-left: auto;
   }
 
   .hide-mobile,
@@ -269,16 +389,41 @@ h3.ant-typography {
   }
 
   .workspace {
+    flex: initial;
     width: 100%;
+    max-width: 100%;
     margin-top: 12px;
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
 
   .workspace > .ant-col {
+    display: block;
+    width: 100%;
     max-width: 100%;
     padding-right: 0 !important;
     padding-left: 0 !important;
+  }
+
+  .input-form .ant-row,
+  .main-card .ant-row {
+    margin-right: -5px !important;
+    margin-left: -5px !important;
+  }
+
+  .input-form .ant-row > .ant-col,
+  .main-card .ant-row > .ant-col {
+    min-width: 0;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+
+  .work-card {
+    height: auto;
+  }
+
+  .main-card .ant-card-body {
+    height: auto;
   }
 
   .work-card .ant-card-head {
@@ -298,6 +443,7 @@ h3.ant-typography {
   }
 
   .chart-card {
+    flex: initial;
     min-height: 330px;
   }
 
@@ -307,6 +453,20 @@ h3.ant-typography {
 
   .chart-surface {
     height: 278px;
+    min-height: 278px;
+  }
+
+  .chart-modal .ant-modal-content {
+    height: calc(100vh - 24px);
+    padding: 16px 12px;
+  }
+
+  .chart-modal .ant-modal-body {
+    height: calc(100vh - 116px);
+  }
+
+  .fullscreen-chart-surface {
+    min-height: 420px;
   }
 
   .hero-metric strong {
